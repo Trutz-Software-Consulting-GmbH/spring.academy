@@ -14,6 +14,13 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
-    - name: Create ctsc/spring.academy Docker image
+    - name: Build ctsc/spring.academy image
       run: |
         docker build -t ctsc/spring.academy .
+    - name: Login to hub.docker.com
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+    - name: Push ctsc/spring.academy image to hub.docker.com
+      run: |
+        docker push ctsc/spring.academy
+
