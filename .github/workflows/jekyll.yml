@@ -17,10 +17,11 @@ jobs:
     - name: Build ctsc/spring.academy image
       run: |
         docker build -t ctsc/spring.academy .
-    - name: Login to hub.docker.com
-      run: |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-    - name: Push ctsc/spring.academy image to hub.docker.com
-      run: |
-        docker push ctsc/spring.academy
+    - name: Publish ctsc/spring.academy image
+      uses: elgohr/Publish-Docker-Github-Action@2.12
+      with:
+        name: ctsc/spring.academy
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    
 
