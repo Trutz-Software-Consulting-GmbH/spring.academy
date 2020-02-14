@@ -41,12 +41,12 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
-    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
   hosts:
     - host: test.spring.academy
       paths: ["/"]
   tls:
-    - secretName: springacademy-tls
+    - secretName: test.spring.academy-tls
       hosts:
         - test.spring.academy
 
