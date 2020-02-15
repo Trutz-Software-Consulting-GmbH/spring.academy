@@ -1,3 +1,59 @@
 ---
-layout: index
 ---
+<!doctype html>
+<html>
+
+{% include head.html %}
+
+<body class="w3-light-gray">
+
+  <!-- Max width -->
+  <div class="w3-content" style="max-width:1400px">
+
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-32">
+      <h1><b>SPRING ACADEMY</b></h1>
+      <p><span class="w3-tag w3-theme-d1">Spring Boot</span> Screencasts für Java Entwickler</p>
+    </header>
+
+
+    <!-- Content -->
+    <div class="w3-row">
+
+      <!-- Blog entries -->
+      {% for post in site.posts %}
+
+      <!-- Blog entry -->
+      <div class="w3-col l4 m6 s12">
+        <div class="w3-card-4 w3-margin w3-white">
+          <video width="100%" controls>
+            <source src="https://springacademy.fra1.digitaloceanspaces.com/spring.academy/{{ post.video }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="w3-container">
+            <a href="{{ post.url }}" style="text-decoration: none">
+              <h4><b>{{ post.title | upcase }}</b></h4>
+            </a>
+            {{ post.excerpt }}
+            <p><span class="w3-opacity">{{ post.date | date: "%d.%m.%Y"  }}</span></p>
+            <a href="{{ post.url }}"><button class="w3-button w3-black w3-padding-large w3-margin-bottom">Mehr »</button></a>
+          </div>
+        </div>
+      </div>
+      <!-- Blog entry -->
+
+      {% endfor %}
+      <!-- Blog entries -->
+
+    </div>
+    <!-- Content -->
+
+  </div>
+  <!-- Max width -->
+
+  <!-- Footer -->
+  {% include footer.html %}
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+{% include head.html %}
+
+<body class="w3-light-gray">
+
+  <!-- Max width -->
+  <div class="w3-content" style="max-width:960px">
+
+    <!-- Navigation -->
+    <div class="w3-container">
+      <a href="/"><button class="w3-button w3-black w3-padding-large w3-margin-bottom">« Zurück</button></a>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-container w3-left w3-padding-16">
+      <h1><b>{{ page.title | upcase }}</b></h1>
+    </header>
+
+    <!-- Content -->
+    <div class="w3-container">
+
+      {{ content }}
+
+    </div>
+    <!-- Content -->
+
+  </div>
+  <!-- Max width -->
+
+  <!-- Footer -->
+  {% include footer.html %}
+
+</body>
+
+</html>

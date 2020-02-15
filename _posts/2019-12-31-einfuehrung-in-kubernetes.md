@@ -1,0 +1,33 @@
+---
+layout: post
+title: Kubernetes Einführung
+video: ../linkedin/Docker%20und%20Kubernetes%20(Faktor%20Zehn)%20-%20handbraked.mp4
+---
+Eine schnelle Einführung in Docker und Kubernetes für Entwickler. Der Fokus liegt auf Kubernetes, wir fangen aber mit einer kurzen Einführung in Docker.
+
+{% video ../linkedin/Docker%20und%20Kubernetes%20(Faktor%20Zehn)%20-%20handbraked.mp4 Einführung %}
+
+## Was ist Docker?
+
+Docker ist eine Containerlösung für (Java) Anwendungen, aber nicht nur für Java Anwendungen. Beliebige Anwendungen, die unter Linux lauffähig sind, können innerhalb eines Docker Containers laufen. Für Java Entwickler ist Docker besonders interessant für Microservices, die unter Spring Boot oder Quarkus laufen. In Kombination mit der GraalVM ergegen sich besonders effiziente Lösungen.
+
+Docker basiert auf besondere Fähigkeiten des Linux Betriebsystems Anwendungen innerhalb eines sogenannten Jails zu schützen. Grob gesprochen verhält sich ein Docker Container wie ein `chroot`. Docker ist somit keine Containerlösung, die einen kompletten Rechner vollständig simuliert. Windows und OSX Programme laufen zum Beispiel nicht unter Docker. Aber Docker selber kann unter Windows und OSX betrieben werden. Diese Präsentation verwendet zum Beispiel Docker unter OSX. Dies wird gelöst indem ein Linux innerhalb einer klassischen virtuellen Maschine gestartet wird. CoreOS ist die Linux Distribution für Docker. Docker ist extrem effizient, typische Docker Container benötigen lediglich Millisekunden um hochzufahren.
+
+Aus Entwicklersicht ist Docker aus zwei Gründen gut:
+- Erstens kann ich die Systeme gegen die ich entwickle dockerisieren. Beispielsweise sind Datenbanken oder App Server die typischen Kandidaten dafür. Mein Rechner wird dadurch nicht mit diesen Programmen (in unterschiedlichen Versionen) beschmutzt und ich kann die Docker Images mit diesen Umsystemen mit meinen Kollegen in Projekt teilen.
+- Zweitens kann die eigene Anwendung dockerisiert werden und produktiv betrieben werden. Die Artefakte, die die Entwickler an Betrieb liefern sind nicht mehr WARs oder EARs mit viel Dokumentation sondern komplette Docker Images, die einem virtuellen Rechner entsprechen. Docker Images müssen natürlich auch konfiguriert werden und gegebenfalls innerhalb eines Clusters betrieben werden. Die Orchestrierung von Docker Container wird typischerweise über Tools wie Kubernetes durchgeführt.
+
+## Docker Installation
+
+Die Installationseinleitung für Docker findest du unter [https://www.docker.com/get-started](https://www.docker.com/get-started). Du erhältst hier die Installationspakete für OSX und Windows, es werden alle notwendigen Komponenten installiert. Für Windows und OSX wird Docker innerhalb einer virtuellen Maschine gestartet, in der virtuellen Maschine läuft dann eine minimale Linux Distribution mit Docker. Docker wird remote gesteuert, der Docker Client wird nativ auf dem eigenen Rechner installiert, der Docker Daemon (Server) läuft innerhalb der virtuellen Maschine (oder remote auf einem anderen Rechner).
+Mit den Befehlen `docker info` und  `docker version` kann überprüft werden, ob die Installation erfolgreich war und die Serverkomponente läuft.
+
+## Beispiel
+
+Wir wollen ein Beispiel nun einen Docker Container starten, der den nginx Server enthält. Das ist sozusagen das “Hello World!” Beispiel in der Docker Welt:
+
+{% highlight console %}
+docker run nginx
+docker run –d nginx
+docker run –p 8080:80 –d nginx
+{% endhighlight %}

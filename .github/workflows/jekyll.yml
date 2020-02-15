@@ -13,11 +13,10 @@ jobs:
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build"
     - name: Publish ctsc/spring.academy image
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: ctsc/spring.academy
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
