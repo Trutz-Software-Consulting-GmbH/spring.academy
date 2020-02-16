@@ -26,8 +26,8 @@
       <!-- Blog entry -->
       <div class="w3-col l4 m6 s12">
         <div class="w3-card-2 w3-margin w3-white">
-          <video width="100%" controls>
-            <source src="https://springacademy.fra1.digitaloceanspaces.com/spring.academy/{{ post.video }}" type="video/mp4">
+          <video width="100%" poster="{{ site.springacademy.store_url }}{{ post.id }}/intro-poster.png" controls>
+            <source src="{{ site.springacademy.store_url }}{{ post.id }}/intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <div class="w3-container">

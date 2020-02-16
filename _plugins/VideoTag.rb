@@ -13,9 +13,18 @@ module Jekyll
       if File.exist?(tmpl_path)
         tmpl = File.read tmpl_path
         site = context.registers[:site]
-        tmpl = (Liquid::Template.parse tmpl).render site.site_payload.merge!({"video" => @url, "description" => @description})
+        tmpl = (Liquid::Template.parse tmpl).render payload(context)
       end
     end
+
+    def payload(context)
+      Jekyll::Utils.deep_merge_hashes(
+        context.registers[:site].site_payload,
+        "page" => context.registers[:page],
+        "video" => @url,
+        "description" => @description)
+    end
+
   end
 end
 
