@@ -1,2 +1,2 @@
-exclude: ["Dockerfile"]
+exclude: ["Dockerfile", "deploy.sh"]
 permalink: "/:title:output_ext"
