@@ -28,6 +28,6 @@ jobs:
     - name: Publish
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: ctsc/spring.academy:${{ steps.autotagger.outputs.tagname }}
+        name: ctsc/spring.academy:0.9.1
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
