@@ -8,19 +8,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    
+    - name: Checkout
+      uses: actions/checkout@v2
+      
     - name: Autotagger
       uses: ButlerLogic/action-autotag@1.0.2
       with:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-    - name: Build the site in the jekyll/builder container
+
+    - name: Build
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build"
-    - name: Publish ctsc/spring.academy image
+        
+    - name: Publish
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: ctsc/spring.academy:${{ tagname }}
+        name: ctsc/spring.academy:${{ jobs.Build.Autotagger.tagname }}
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
