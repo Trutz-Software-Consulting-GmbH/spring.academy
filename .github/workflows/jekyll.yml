@@ -1,8 +1,8 @@
 name: Jekyll site CI
 on:
   push:
-    tags: 
-      - VERSION-*
+    tags:
+      - v*
 jobs:
   build:
     runs-on: ubuntu-latest

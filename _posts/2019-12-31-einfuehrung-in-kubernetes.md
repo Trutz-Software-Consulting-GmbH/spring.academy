@@ -5,7 +5,7 @@ video: ../linkedin/Docker%20und%20Kubernetes%20(Faktor%20Zehn)%20-%20handbraked.
 ---
 Eine schnelle Einführung in Docker und Kubernetes für Entwickler. Der Fokus liegt auf Kubernetes, wir fangen aber mit einer kurzen Einführung in Docker.
 
-{% video ../linkedin/Docker%20und%20Kubernetes%20(Faktor%20Zehn)%20-%20handbraked.mp4 Einführung %}
+{% video ../linkedin/Docker%20und%20Kubernetes%20(Faktor%20Zehn)%20-%20handbraked.mp4 Einführung in Docker und Kubernetes %}
 
 ## Was ist Docker?
 
