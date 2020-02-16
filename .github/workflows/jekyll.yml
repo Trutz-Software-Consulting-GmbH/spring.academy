@@ -21,6 +21,6 @@ jobs:
     - name: Publish ctsc/spring.academy image
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: ctsc/spring.academy:${{ version }}
+        name: ctsc/spring.academy:${{ tagname }}
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
