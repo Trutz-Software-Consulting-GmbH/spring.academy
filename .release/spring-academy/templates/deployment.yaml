@@ -26,6 +26,10 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh","-c","nginx -s quit"]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
