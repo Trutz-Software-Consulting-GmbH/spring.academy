@@ -43,12 +43,12 @@ ingress:
     kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
   hosts:
-    - host: test.spring.academy
+    - host: spring.academy
       paths: ["/"]
   tls:
-    - secretName: test.spring.academy-tls
+    - secretName: spring.academy-tls
       hosts:
-        - test.spring.academy
+        - spring.academy
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
