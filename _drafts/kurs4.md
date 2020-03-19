@@ -89,8 +89,7 @@ Du findest das Projekt in GitHub unter [https://github.com/Trutz-Software-Consul
 In dieser Lektion möchte ich einen minimalen REST Service mit Spring Boot aufbauen. Die zentrale Java Klasse dabei ist der sogenannte **REST Controller**.
 
 Ein REST Controller ist:
-- eine Java Klasse, die
-- die Annotation `@RESTController` trägt und
+- eine mit `@RESTController` annotierte Java Klasse, die
 - Methoden hat, die mit `@GetMapping`, `@PostMapping`, `@PutMapping` oder `@DeleteMapping` annotiert sind.
 
 Die Methodenannotationen entsprechen dabei den [HTTP-Anfragemethoden](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP-Anfragemethoden) `GET`, `POST`, `PUT` und `DELETE`.
