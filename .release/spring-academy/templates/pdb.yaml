@@ -1,0 +1,7 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "spring-academy.fullname" . }}
+spec:
+  minAvailable: 1
+  selector: {{- include "spring-academy.selectorLabels" . | nindent 4 }}
