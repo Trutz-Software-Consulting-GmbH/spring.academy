@@ -4,4 +4,6 @@ metadata:
   name: {{ include "spring-academy.fullname" . }}
 spec:
   minAvailable: 1
-  selector: {{- include "spring-academy.selectorLabels" . | nindent 4 }}
+  selector:
+    matchLabels:
+      {{- include "spring-academy.selectorLabels" . | nindent 6 }}
