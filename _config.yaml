@@ -1,5 +1,6 @@
 exclude: ["Dockerfile", "deploy.sh", "Gemfile", "Gemfile.lock"]
 permalink: "/:title:output_ext"
+url: https://spring.academy/
 plugins:
   - jekyll-target-blank
   - jekyll-toc
