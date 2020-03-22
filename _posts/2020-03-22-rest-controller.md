@@ -101,7 +101,7 @@ dann siehst du mit
 - `>` markiert den Request HTTP Header und mit
 - `<` markiert den Response HTTP Header.
 
-Möchtest du eine Anwendung als REST Client verwenden, dann ich [Postman](https://www.postman.com/) die erste Wahl. Sowohl `curl`als auch Postman sind sehr ausgereifte Produkte, die ich dir empfehlen möchte.
+Möchtest du eine Anwendung als REST Client verwenden, dann ist [Postman](https://www.postman.com/) die erste Wahl. Sowohl `curl`als auch Postman sind sehr ausgereifte Produkte, die ich dir empfehlen möchte.
 
 ## Weitere Schritte
 
