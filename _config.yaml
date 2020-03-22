@@ -1,4 +1,4 @@
 exclude: ["Dockerfile", "deploy.sh"]
 permalink: "/:title:output_ext"
 springacademy:
-  store_url: https://springacademy.fra1.digitaloceanspaces.com/spring.academy
+  store_url: https://springacademy.fra1.digitaloceanspaces.com

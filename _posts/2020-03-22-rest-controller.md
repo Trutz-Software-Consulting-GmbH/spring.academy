@@ -2,11 +2,13 @@
 layout: post
 title: REST Controller
 ---
-Lerne in 10 Minuten, wie du from scratch einen minimalen REST Service in Spring Boot baust und erstelle dabei einen `@RestController`.
+Lerne in 10 Minuten, wie du from scratch einen minimalen REST Service baust und erstelle dabei einen Spring Boot `@RestController`.
+
+{% video rest-controller-hb REST Service mit Spring Boot in 10 Minuten %}
 
 ## Der minimale REST Controller
 
-Die zentralle Java Klasse eines REST Webservices in Spring Boot ist der sogenannten **REST Controller**. Er nimmt die HTTP Anfragen entgegen und verarbeitet sie.
+Die zentralle Java Klasse eines REST Webservices in Spring Boot ist der sogenannte **REST Controller**. Er nimmt die HTTP Anfragen entgegen und verarbeitet sie.
 
 Ein REST Controller ist
 - eine mit `@RESTController` annotierte Java Klasse, die
@@ -92,6 +94,7 @@ curl -v localhost:8080/sayok
 * Connection #0 to host localhost left intact
 ok* Closing connection 0
 ```
+
 dann siehst du mit
 - `>` markiert den Request HTTP Header und mit
 - `<` markiert den Response HTTP Header.
@@ -102,7 +105,7 @@ Möchtest du eine Anwendung als REST Client verwenden, dann ich [Postman](https:
 
 Ich habe mit dem obigen trivialen REST Service lediglich die Oberfläche der REST Welt angekratzt. Mit Spring Boot kannst du natürlich professionelle REST Anwendungen und Microservices aufbauen. Weiterführende Themen aus diesem Bereich sind
 
-- HTTP Authentifizierung über Spring Security
+- [die Spring Boot Dokumentation](https://spring.io/guides/gs/rest-service/)
 - [Spring HATEOAS](https://spring.io/projects/spring-hateoas)
 - [Open API](https://www.openapis.org/) über [Swagger](https://swagger.io/)
 
