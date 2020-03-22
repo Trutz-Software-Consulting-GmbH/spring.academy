@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'jekyll-target-blank'
-gem 'jekyll-toc'
+gem "jekyll", github: "jekyll/jekyll"
+gem "jekyll-target-blank"
+gem "jekyll-toc"
