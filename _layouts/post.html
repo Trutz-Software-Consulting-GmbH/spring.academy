@@ -5,16 +5,22 @@
 
 <body class="w3-light-gray">
 
-  <!-- Max width -->
-  <div class="w3-content" style="max-width:960px">
-
+  <div class="w3-top w3-sidenav" style="overflow:hidden">
     <!-- Navigation -->
     <div class="w3-container">
       <a href="/"><button class="w3-button w3-black w3-padding-large w3-margin-bottom">« Zurück</button></a>
     </div>
+    <div class="w3-container toc">
+      <h4>Inhaltsverzeichnis</h4>
+      {% include toc.html html=content %}
+    </div>
+  </div>
+
+  <!-- Max width -->
+  <div class="w3-content" style="max-width:960px">
 
     <!-- Header -->
-    <header class="w3-container w3-left w3-padding-16">
+    <header class="w3-container w3-left w3-padding-64">
       <h1><b>{{ page.title | upcase }}</b></h1>
     </header>
 

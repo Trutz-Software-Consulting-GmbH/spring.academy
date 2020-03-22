@@ -4,6 +4,8 @@ title: REST Controller
 ---
 Lerne in 10 Minuten, wie du from scratch einen minimalen REST Service baust und erstelle dabei einen Spring Boot `@RestController`.
 
+## Screencast
+
 {% video rest-controller-hb REST Service mit Spring Boot in 10 Minuten %}
 
 ## Der minimale REST Controller
@@ -111,3 +113,7 @@ Ich habe mit dem obigen trivialen REST Service lediglich die Oberfläche der RES
 
 und vieles mehr.
 Schöne Themen für weitere Tutorials ...
+
+## Quellcode
+
+Den kompletten Quellcode dieses Tutorials findest du in GitHub unter [https://github.com/Trutz-Software-Consulting-GmbH/rest-controller](https://github.com/Trutz-Software-Consulting-GmbH/rest-controller).
