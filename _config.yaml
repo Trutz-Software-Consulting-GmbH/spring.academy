@@ -1,8 +1,8 @@
-exclude: ["Dockerfile", "deploy.sh", "Gemfile", "Gemfile.lock"]
-permalink: "/:title:output_ext"
-url: https://spring.academy/
+exclude:       ["Dockerfile", "deploy.sh", "Gemfile", "Gemfile.lock"]
+permalink:     "/:title:output_ext"
+url:           https://spring.academy/
 plugins:
   - jekyll-target-blank
   - jekyll-toc
 springacademy:
-  store_url: https://springacademy.fra1.digitaloceanspaces.com
+  store_url:   https://springacademy.fra1.digitaloceanspaces.com
