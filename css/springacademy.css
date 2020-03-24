@@ -1,0 +1,27 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Fredericka the Great', cursive
+}
+
+body {
+  font-family: 'Roboto Slab', serif
+}
+
+p,
+li,
+code {
+  font-size: 1.2em
+}
+
+video {
+  object-fit: cover
+}
+
+@media only screen and (max-width: 1360px) {
+  div.toc {
+    display: none;
+  }
+}
