@@ -134,19 +134,19 @@ liefert wie gewohnt die Länge des Strings `test` zurück.
 
 ## Required Parameter
 
-Bei der Verwendung der Annotation `@RequestParam` wie im obigen Beispiel, betrachtet Spring Boot den HTTP Parameter `input` automatisch als **required**. Das heißt, dass Spring Boot überprüft, ob dieser Parameter in der HTTP Anfrage enthalten ist. Ist er es nicht, zum Beispiel bei folgender Abfrage
+Bei der Verwendung der Annotation `@RequestParam` wie im obigen Beispiel, betrachtet Spring Boot den HTTP Parameter `input` automatisch als **required**. Das heißt also, dass Spring Boot überprüft, ob dieser Parameter in der HTTP Anfrage enthalten ist. Ist er es nicht, zum Beispiel bei folgender Abfrage
 
 ```console
 curl curl http://localhost:8080/length
 ```
 
-dann liefert Spring Boot eine sprechende Fehlermeldung
+dann liefert Spring eine sprechende Fehlermeldung
 
 ```console
 Required String parameter 'input' is not present
 ```
 
-in dem HTTP Response zusammen mit einem HTTP Status Code 400. Serverseitig enthält der Log folgende Exception
+in dem HTTP Response zusammen mit dem HTTP Status Code 400. Serverseitig enthält der Log folgende Exception
 
 ```console
 MissingServletRequestParameterException: Required String parameter 'input' is not present
@@ -154,4 +154,16 @@ MissingServletRequestParameterException: Required String parameter 'input' is no
 
 Das heißt, dass die Java Methode `length` gar nicht mehr ausgeführt wird, weil der required Parameter `input` in der HTTP Anfrage nicht enthalten war.
 
-Bitte beachte, dass du beim Auslassen der Annotation `@RequestParam` ein anderes Verhalten hast (siehe Anfang des Tutorials). Ohne `@RequestParam` wird die Methode `length` ausgeführt und du erhälst einen HTTP Status 500 und eine `NullPointerException`, da der `input` Parameter `null` war. 
+Bitte beachte, dass du beim Auslassen der Annotation `@RequestParam` ein anderes Verhalten hast (siehe Anfang des Tutorials). Ohne `@RequestParam` wird die Methode `length` ausgeführt und du erhälst einen HTTP Status 500 und eine `NullPointerException`, da der `input` Parameter `null` war.
+
+## Fazit
+
+Wie du in diesem Tutorial gesehen hast, bildet Spring Boot sehr intuitiv die übergebenen HTTP Parameter auf die Java Parameter der entsprechenden Java Methoden ab.
+
+Es gibt aus meiner Sicht drei Strategien der Parameterübergabe, die du kennen und auch verwenden solltest:
+
+1. die Methodenparameter werden nicht annotiert und das Mapping erfolgt anhand es Namens der Java Variablen,
+1. du verwendest `Optional` um die Parameter als optional zu markieren und der Zugriff auf die Parameter erfolgt über `ifPresent(...)`, `map(...).orElse(...)`,
+1. du verwendest `@RequestParam` wie oben gezeigt um die HTTP Parameter auf die Java Parameter abzubilden.
+
+## Diskussion

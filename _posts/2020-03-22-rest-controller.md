@@ -132,3 +132,5 @@ Schöne Themen für weitere Tutorials ...
 ## Quellcode
 
 Den kompletten Quellcode dieses Tutorials findest du in GitHub unter <https://github.com/Trutz-Software-Consulting-GmbH/rest-controller>.
+
+## Diskussion
