@@ -156,14 +156,42 @@ Das heißt, dass die Java Methode `length` gar nicht mehr ausgeführt wird, weil
 
 Bitte beachte, dass du beim Auslassen der Annotation `@RequestParam` ein anderes Verhalten hast (siehe Anfang des Tutorials). Ohne `@RequestParam` wird die Methode `length` ausgeführt und du erhälst einen HTTP Status 500 und eine `NullPointerException`, da der `input` Parameter `null` war.
 
+Möchtest du, dass der `input` Parameter bei der Verwendung der `@RequestParam` Annotation lediglich optional ist, dann kannst du `@RequestParam(name="input", required=false)` wie in dem unteren Beispiel. Zusammen mit der Verwendung von `Optional` hast du insgesamt folgenden Quellcode
+
+```java
+import java.util.Optional;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+class LengthController {
+
+  @GetMapping("/length")
+  int length(@RequestParam(name = "input", required = false) Optional<String> message) {
+    return message.map(String::length).orElse(0);
+  }
+
+}
+```
+
+Der HTTP Aufruf ohne Parameter
+
+```console
+curl http://localhost:8080/length
+```
+
+liefert dann wie erwartet eine `0` zurück.
+
 ## Fazit
 
 Wie du in diesem Tutorial gesehen hast, bildet Spring Boot sehr intuitiv die übergebenen HTTP Parameter auf die Java Parameter der entsprechenden Java Methoden ab.
 
 Es gibt aus meiner Sicht drei Strategien der Parameterübergabe, die du kennen und auch verwenden solltest:
 
-1. die Methodenparameter werden nicht annotiert und das Mapping erfolgt anhand es Namens der Java Variablen,
-1. du verwendest `Optional` um die Parameter als optional zu markieren und der Zugriff auf die Parameter erfolgt über `ifPresent(...)`, `map(...).orElse(...)`,
+1. die Methodenparameter werden nicht annotiert und das Mapping erfolgt anhand des Namens der Java Variablen,
+1. du verwendest `Optional` um die Parameter als optional zu markieren und der Zugriff auf die Parameter erfolgt über `ifPresent()`, `map().orElse()`, usw. oder
 1. du verwendest `@RequestParam` wie oben gezeigt um die HTTP Parameter auf die Java Parameter abzubilden.
 
 ## Diskussion
