@@ -2,7 +2,7 @@
 
 SPRINGACADEMY_VERSION=$1
 
-bundle exec jekyll build
+JEKYLL_ENV=production bundle exec jekyll build
 docker build -t ctsc/spring.academy:$SPRINGACADEMY_VERSION .
 docker tag ctsc/spring.academy:$SPRINGACADEMY_VERSION ctsc/spring.academy:latest
 docker push ctsc/spring.academy:$SPRINGACADEMY_VERSION

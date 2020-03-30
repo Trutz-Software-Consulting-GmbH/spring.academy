@@ -1,4 +1,4 @@
-exclude:       ["Dockerfile", "deploy.sh", "Gemfile", "Gemfile.lock"]
+exclude:       ["Dockerfile", "start.sh", "deploy.sh", "Gemfile", "Gemfile.lock"]
 permalink:     "/:title:output_ext"
 url:           https://spring.academy/
 plugins:
