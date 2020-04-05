@@ -5,6 +5,10 @@ title: Request Parameter
 
 Lerne wie du Parameter an REST Services in Spring Boot übergibst und verwende dabei die Annotation `@RequestParam`.
 
+## Screencast
+
+{% video rest-controller-request-param-hb Parameter an REST Services in Spring Boot %}
+
 ## Das minimale Beispiel
 
 In dem [REST Controller Tutorial]({% post_url 2020-03-22-rest-controller %}) hast du gelernt, wie du einen minimalen REST Controller aufbaust. In diesem Tutorial gehe ich einen Schritt weiter und zeige ich dir, wie du Parameter an REST Services übergibst.
